@@ -1,0 +1,15 @@
+*{box-sizing: border-box;
+    border: solid red 10px;}
+
+
+
+
+body {background: url("../images/orangerose.jpeg");
+    background-repeat: no-repeat;
+    background-size: 800px 800px;
+}
+
+h1 {text-align: center;
+    font-family: cursive;}
+
+
