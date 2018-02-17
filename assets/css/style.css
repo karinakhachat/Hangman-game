@@ -2,14 +2,22 @@
     border: solid red 10px;}
 
 
-
-
 body {background: url("../images/orangerose.jpeg");
     background-repeat: no-repeat;
     background-size: 800px 800px;
 }
 
 h1 {text-align: center;
-    font-family: cursive;}
+    font-family: cursive;
+    }
 
 
+.row { margin-top: 200px;}
+
+#firstcol, #secondcol{ background-color: antiquewhite;
+            width: 30%;
+            height: 300px; 
+            border: dotted 10px sienna;
+        
+        
+        }
