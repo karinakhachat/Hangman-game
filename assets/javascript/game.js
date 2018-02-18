@@ -1,48 +1,36 @@
-var word=["M","O","T","H","E","R"];
-var numberofguesses;
-var rightanswer;
-var wronganswer;
-var winCounter = 0;
-var lossCounter = 0;
-var underscores = "";
+var words = ["every","mother","counts","nurture","volunteer"]
+var random = words[Math.floor(Math.random() * words.length)];
 
-for(i=0; i<word.length; i++) {
-    underscores.push ("_")
+var k;
+var count = 0;
+var blankarr = [];
+
+function begingame()
+{
+    for (var i = 0; i < random.length; i++)
+    {
+        blankarr[i] = "_";
+
+    }
+
+    k = blankarr.join(" ");
+    document.getElementById("word").innerHTML = k;
 }
 
-console.log(word);
+function Letter() 
+{
+ var letter = document.getElementById("letter").value;
 
-var wordelement = document.getElementById('word');
-var lettercountelement = document.getElementById('lettercount');
-var currentletterelement = document.getElementById ('currentletter');
+ if (letter.length > 0) 
 
-function checkguess(letter) {
-    var  lettercheck = false;
-    for (var i = 0; 1 < underscores; i++) {
-        if (word[i] == letter)
-        { lettercheck = true;
-        }
- if (lettercheck) {
-    
-    
-    for( var i =0; i = underscores; i++) 
+}
+
+for ( var i= 0; i < random.length; i++)
+{
+    if (random[i] === letter)
     {
-    if (word [i] == letter) (
-    underscores[i] = letter
-    )
-     }
-     console.log(underscores);
-
- }
-  else { wronganswer.push(letter);
-    numberofguesses--;
-    console.log("that was the wrong answer"+ numberofguesses + "are remaining");
-    
-  }
+        blankarr[i] = letter;
     }
 }
-
-function done () {
-
-    console.log("Win")
-}
+count++;
+document.getElementById("counter").innerHTML = "number of tries" + count;
