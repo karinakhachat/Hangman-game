@@ -19,11 +19,11 @@ function begingame()
 
 function Letter() 
 {
- var letter = document.getElementById("letter").value;
+ var letter = document.getElementById("numberletters").value;
 
  if (letter.length > 0) 
 
-}
+
 
 for ( var i= 0; i < random.length; i++)
 {
@@ -34,3 +34,6 @@ for ( var i= 0; i < random.length; i++)
 }
 count++;
 document.getElementById("counter").innerHTML = "number of tries" + count;
+document.getElementById("letters").innerHTML = blankarr.join(" ");
+
+}
