@@ -17,10 +17,10 @@ init();
 
 function Guess() {
 var guess = document.getElementById("guess").value;
-var ShowThis="";
+var showThisMessage="";
 
 if (guess.length !== 1) {
-ShowThis = "please enter only one letter";
+showThisMessage = "please enter only one letter";
 }
 
 else {
@@ -29,26 +29,30 @@ else {
         if (word[i] === guess) {
             answerArray[i] = guess;
             showThisMessage = "correct "+guess+" is in the answer";
-        }
+       
+     }
     }
+    console.log (showThisMessage)
+     
 }
+Guess();
 
     var remaining_letters = answerArray.length;
     for (i = 0; i < answerArray.length; i ++) {
-        if (answerArray[i]) !== '_') {
+        if (answerArray[i] !== '_') {
             remaining_letters -= 1; 
         }
         }
     if (remaining_letters == 0) {
-        ShowThis= "You Guessed it";
+        showThisMessage= "You Guessed it";
     }
     
     if ( remaining_letters === "") {
-        ShowThis = "Keep Trying!"+ guess;
+        showThisMessage = "Keep Trying!"+ guess;
     }
 
 document.getElementById("guess").innerHTML = answerArray.join(" ");
-document.getElementById("message").innerHTML = ShowThis;
+document.getElementById("message").innerHTML = showThisMessage;
 
 function quit () {
     document.getElementById("message").innerHTML = "The word is " +word;
@@ -57,4 +61,4 @@ for ( var k = 0; k < word.length; k++) {
 }
 document.getElementById ("answer").innerHTML = answerArray.join(" ");
 
-}
+}}
