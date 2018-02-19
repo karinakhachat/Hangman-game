@@ -1,39 +1,60 @@
-var words = ["every","mother","counts","nurture","volunteer"]
-var random = words[Math.floor(Math.random() * words.length)];
+var WORDS =["every", "mother","counts","countries","donate"]
+var word="";
+var answerArray = [];
 
-var k;
-var count = 0;
-var blankarr = [];
+function init(){
+ word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-function begingame()
-{
-    for (var i = 0; i < random.length; i++)
-    {
-        blankarr[i] = "_";
+answerArray = [];
 
-    }
+for (var i = 0; i < word.length; i ++) {
+    answerArray [i] = "_";
+}
+document.getElementById("answer").innerHTML = answerArray.join(" ");
+document.getElementById("message").innerHTML = "Type a letter to begin"
+}
+init();
 
-    k = blankarr.join(" ");
-    document.getElementById("word").innerHTML = k;
+function Guess() {
+var guess = document.getElementById("guess").value;
+var ShowThis="";
+
+if (guess.length !== 1) {
+ShowThis = "please enter only one letter";
 }
 
-function Letter() 
-{
- var letter = document.getElementById("numberletters").value;
-
- if (letter.length > 0) 
-
-
-
-for ( var i= 0; i < random.length; i++)
-{
-    if (random[i] === letter)
-    {
-        blankarr[i] = letter;
+else {
+    var i=0; 
+    for (i = 0; i < word.length; i++) {
+        if (word[i] === guess) {
+            answerArray[i] = guess;
+            showThisMessage = "correct "+guess+" is in the answer";
+        }
     }
 }
-count++;
-document.getElementById("counter").innerHTML = "number of tries" + count;
-document.getElementById("letters").innerHTML = blankarr.join(" ");
+
+    var remaining_letters = answerArray.length;
+    for (i = 0; i < answerArray.length; i ++) {
+        if (answerArray[i]) !== '_') {
+            remaining_letters -= 1; 
+        }
+        }
+    if (remaining_letters == 0) {
+        ShowThis= "You Guessed it";
+    }
+    
+    if ( remaining_letters === "") {
+        ShowThis = "Keep Trying!"+ guess;
+    }
+
+document.getElementById("guess").innerHTML = answerArray.join(" ");
+document.getElementById("message").innerHTML = ShowThis;
+
+function quit () {
+    document.getElementById("message").innerHTML = "The word is " +word;
+for ( var k = 0; k < word.length; k++) {
+    answerArray[k] = word [k];
+}
+document.getElementById ("answer").innerHTML = answerArray.join(" ");
 
 }
