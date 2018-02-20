@@ -16,8 +16,11 @@ document.getElementById("message").innerHTML = "Type a letter to begin"
 init();
 
 function Guess() {
-var guess = document.getElementById("guess").value;
-var showThisMessage="";
+var guess = document.onkeyup = function (event) {
+    var guess = event.key;
+    document.getElementById("message").innerHTML = guess;
+    
+var showThisMessage="";}
 
 if (guess.length !== 1) {
 showThisMessage = "please enter only one letter";
