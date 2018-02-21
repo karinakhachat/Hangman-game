@@ -67,7 +67,7 @@ Guess();
         showThisMessage = "Keep Trying!" + guess;
     }
 
-    document.getElementById("guess").innerHTML = answerArray.join(" ");
+    document.getElementById("answer").innerHTML = answerArray.join(" ");
     document.getElementById("message").innerHTML = showThisMessage;
 
     function quit() {
