@@ -5,7 +5,7 @@ var answerArray = [];
 function init(){
  word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-answerArray = [];
+answerArray = word;
 
 for (var i = 0; i < word.length; i ++) {
     answerArray [i] = "_";
@@ -24,9 +24,11 @@ function Guess(){
     var guess = document.onkeyup = function(event) 
     {
         var guess = event.key;
-        document.getElementById("answer").innerHTML = guess;
-    
+        console.log(guess);
 
+        for (var i = 0; i < word.length; i ++) {
+            answerArray [i] = guess;
+        }
         if(guess === word[i])
         {
          document.getElementById("answer").innerHTML;
