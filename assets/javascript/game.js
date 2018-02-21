@@ -1,7 +1,9 @@
 var WORDS =["every", "mother","counts","countries","donate"]
 var word="";
 var answerArray = [];
+var wins= 0;
 var showThisMessage= " ";
+var guessleft= 12;
 
 
 function init(){
@@ -21,7 +23,7 @@ init();
 //works for now returns hidden word to console and replaces it with _ until 
 //user guesses a letter
 
-function Guess(){
+    function Guess(){
     var guess = document.onkeyup = function(event) 
     {
         var guess = event.key;
@@ -29,30 +31,23 @@ function Guess(){
 //working as well, log the user guess letter
 
         console.log(answerArray.includes(guess));
-        if(guess === answerArray[i])
+        for (var i = 0; i < answerArray.length; i++) {
+        if (guess === answerArray[i])
         {
-         answerArray[i].push(guess);
+            answerArray[i] = guess;
         }
-      
-         else {
-        var i = 0;
-        for (i = 0; i < word.length; i++) 
-        {
-            if (word[i] === guess) 
-            {
-                answerArray[i] = guess;
-                document.getElementById
-            }
+    
+        document.getElementById('answer');
         }
         console.log(showThisMessage)
     }
     }
 
-}
+
 
 Guess();
 
-
+ 
     var remaining_letters = answerArray.length;
     for (i = 0; i < answerArray.length; i++) {
         if (answerArray[i] !== '_') {
@@ -78,3 +73,8 @@ Guess();
         document.getElementById("answer").innerHTML = answerArray.join(" ");
 
     }
+function restart() {
+    
+    document.getElementById("answer").innerHTML = "";
+
+}
