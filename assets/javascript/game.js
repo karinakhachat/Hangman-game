@@ -2,7 +2,6 @@ var WORDS =["every", "mother","counts","countries","donate"]
 var word="";
 var answerArray = [];
 var wins= 0;
-var showThisMessage= " ";
 var guessleft= 12;
 
 
@@ -39,7 +38,7 @@ init();
     
         document.getElementById('answer');
         }
-        console.log(showThisMessage)
+       
     }
     }
 
@@ -55,11 +54,11 @@ Guess();
         }
     }
     if (remaining_letters == 0) {
-        showThisMessage = "You Guessed it";
+        document.getElementById("message").innerHTML= "you win!";
     }
 
     if (remaining_letters === "") {
-        showThisMessage = "Keep Trying!" + guess;
+       document.getElementById("message").innerHTML="keep trying!"
     }
 
     document.getElementById("answer").innerHTML = answerArray.join(" ");
