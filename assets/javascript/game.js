@@ -38,23 +38,20 @@ function Guess(){
     {
         var guess = event.key;
         document.getElementById("answer").innerHTML = guess;
-
-        var showThisMessage = "";
     
-
-    if (guess.length !== 1) {
-        showThisMessage = "please enter only one letter";
-    } 
-    
-    else {
-        var i = 0;
-        for (i = 0; i < WORDS.length; i++) 
+        if(guess === word[i])
         {
-            if (WORDS[i] === guess) 
+         document.getElementById("answer").innerHTML;
+        }
+      
+         else {
+        var i = 0;
+        for (i = 0; i < word.length; i++) 
+        {
+            if (word[i] === guess) 
             {
                 answerArray[i] = guess;
-                showThisMessage = "correct " + guess + " is in the answer";
-
+                document.getElementById
             }
         }
         console.log(showThisMessage)
