@@ -2,6 +2,8 @@ var WORDS =["every", "mother","counts","countries","donate"]
 var word="";
 var answerArray = [];
 var showThisMessage= " ";
+
+
 function init(){
  word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
@@ -25,12 +27,11 @@ function Guess(){
         var guess = event.key;
         console.log(guess);
 //working as well, log the user guess letter
-        for (var i = 0; i < word.length; i++) {
-           answerArray[i] = "_";
-        }
-        if(guess === word[i])
+
+        console.log(answerArray.includes(guess));
+        if(guess === answerArray[i])
         {
-         document.getElementById("answer").innerHTML;
+         answerArray[i].push(guess);
         }
       
          else {
