@@ -19,19 +19,6 @@ var WORDS = ["every", "mother", "counts", "countries", "donate"]
 var word = "";
 var answerArray = [];
 
-function init() {
-    word = WORDS[Math.floor(Math.random() * WORDS.length)];
-
-    answerArray = [];
-
-
-    for (var i = 0; i < word.length; i++) {
-        answerArray[i] = "_";
-    }
-    document.getElementById("answer").innerHTML = answerArray.join(" ");
-    document.getElementById("message").innerHTML = "Type a letter to begin"
-}
-init();
 
 function Guess(){
     var guess = document.onkeyup = function(event) 
@@ -39,6 +26,7 @@ function Guess(){
         var guess = event.key;
         document.getElementById("answer").innerHTML = guess;
     
+
         if(guess === word[i])
         {
          document.getElementById("answer").innerHTML;
