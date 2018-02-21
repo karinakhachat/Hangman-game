@@ -1,33 +1,32 @@
 var WORDS =["every", "mother","counts","countries","donate"]
 var word="";
 var answerArray = [];
-
+var showThisMessage= " ";
 function init(){
  word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-answerArray = word;
+answerArray = word.split(' ');
 
 for (var i = 0; i < word.length; i ++) {
     answerArray [i] = "_";
 }
+console.log(word);
+
 document.getElementById("answer").innerHTML = answerArray.join(" ");
 document.getElementById("message").innerHTML = "Type a letter to begin"
 }
 init();
-
-var WORDS = ["every", "mother", "counts", "countries", "donate"]
-var word = "";
-var answerArray = [];
-
+//works for now returns hidden word to console and replaces it with _ until 
+//user guesses a letter
 
 function Guess(){
     var guess = document.onkeyup = function(event) 
     {
         var guess = event.key;
         console.log(guess);
-
-        for (var i = 0; i < word.length; i ++) {
-            answerArray [i] = guess;
+//working as well, log the user guess letter
+        for (var i = 0; i < word.length; i++) {
+           answerArray[i] = "_";
         }
         if(guess === word[i])
         {
