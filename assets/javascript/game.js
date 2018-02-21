@@ -1,5 +1,6 @@
 var WORDS =["every", "mother","counts","countries","donate"]
 var word="";
+var wordArray = [];
 var answerArray = [];
 var wins= 0;
 var guessleft= 12;
@@ -8,15 +9,17 @@ var guessleft= 12;
 function init(){
  word = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-answerArray = word.split(' ');
 
-for (var i = 0; i < word.length; i ++) {
-    answerArray [i] = "_";
+
+wordArray = word.split('');
+console.log(answerArray);
+for (var i = 0; i < wordArray.length; i ++) {
+    answerArray[i] = "_";
 }
-console.log(word);
+console.log(word, wordArray);
 
 document.getElementById("answer").innerHTML = answerArray.join(" ");
-document.getElementById("message").innerHTML = "Type a letter to begin"
+
 }
 init();
 //works for now returns hidden word to console and replaces it with _ until 
@@ -28,8 +31,9 @@ init();
         var guess = event.key;
         console.log(guess);
 //working as well, log the user guess letter
-
-        console.log(answerArray.includes(guess));
+        console.log("right before", answerArray);
+        console.log("word array", wordArray);
+        console.log(wordArray.includes(guess));
         for (var i = 0; i < answerArray.length; i++) {
         if (guess === answerArray[i])
         {
@@ -42,11 +46,7 @@ init();
     }
     }
 
-
-
 Guess();
-
- 
     var remaining_letters = answerArray.length;
     for (i = 0; i < answerArray.length; i++) {
         if (answerArray[i] !== '_') {
@@ -58,11 +58,11 @@ Guess();
     }
 
     if (remaining_letters === "") {
-       document.getElementById("message").innerHTML="keep trying!"
+       document.getElementById("message").innerHTML="keep trying!";
     }
 
     document.getElementById("answer").innerHTML = answerArray.join(" ");
-    document.getElementById("message").innerHTML = showThisMessage;
+
 
     function quit() {
         document.getElementById("message").innerHTML = "The word is " + word;
